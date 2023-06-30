@@ -1,21 +1,21 @@
 <div class="container mx-auto">
   <h2>My Heroes</h2>
-  <ul class="flex flex-col gap-2">
-    <li *ngFor="let hero of heroes">
-      <button>
-        <span class="badge">{{ hero.id }}</span>
-        <span>{{ hero.name }}</span>
+
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+  <ul class="flex flex-col mt-5 space-y-5">
+    <li
+      *ngFor="let hero of heroes"
+      class="overflow-hidden font-semibold rounded-lg shadow-lg w-fit"
+    >
+      <button
+        (click)="onSelect(hero)"
+        class="flex items-center duration-200 bg-neutral-600 hover:bg-neutral-700"
+        [class.selected]="hero === selectedHero"
+      >
+        <span class="p-2 bg-neutral-800">{{ hero.id }}</span>
+        <span class="p-2">{{ hero.name }}</span>
       </button>
     </li>
   </ul>
 </div>
-<!-- <div>
-  <label for="name">Hero name: </label>
-  <input
-    class="p-2 border rounded-lg bg-neutral-700 border-neutral-600 focus:outline-none"
-    type="text"
-    id="name"
-    placeholder="name"
-    [(ngModel)]="hero.name"
-  />
-</div> -->
