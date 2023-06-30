@@ -1,0 +1,21 @@
+<div class="container mx-auto">
+  <h2>My Heroes</h2>
+  <ul class="flex flex-col gap-2">
+    <li *ngFor="let hero of heroes">
+      <button>
+        <span class="badge">{{ hero.id }}</span>
+        <span>{{ hero.name }}</span>
+      </button>
+    </li>
+  </ul>
+</div>
+<!-- <div>
+  <label for="name">Hero name: </label>
+  <input
+    class="p-2 border rounded-lg bg-neutral-700 border-neutral-600 focus:outline-none"
+    type="text"
+    id="name"
+    placeholder="name"
+    [(ngModel)]="hero.name"
+  />
+</div> -->
