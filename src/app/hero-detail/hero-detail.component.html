@@ -11,5 +11,19 @@
       [(ngModel)]="hero.name"
     />
   </div>
-  <button type="button" (click)="goBack()">Go Back</button>
+  <div class="mt-4 space-x-2">
+    <button
+      class="p-2 duration-200 rounded-lg bg-neutral-600 hover:bg-neutral-700"
+      (click)="save()"
+    >
+      Save
+    </button>
+    <button
+      class="p-2 duration-200 rounded-lg bg-neutral-600 hover:bg-neutral-700"
+      type="button"
+      (click)="goBack()"
+    >
+      Go Back
+    </button>
+  </div>
 </div>
