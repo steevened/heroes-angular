@@ -1,0 +1,9 @@
+<h2>Top Heroes</h2>
+
+<div class="flex items-center gap-2">
+  <a *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
+    <button class="p-2 rounded-lg bg-neutral-600 hover:bg-neutral-700">
+      {{ hero.name }}
+    </button>
+  </a>
+</div>

@@ -6,18 +6,14 @@
       *ngFor="let hero of heroes"
       class="overflow-hidden font-semibold rounded-lg shadow-lg w-fit"
     >
-      <button
-        (click)="onSelect(hero)"
-        class="flex items-center duration-200 bg-neutral-600 hover:bg-neutral-700"
-        [class.selected]="hero === selectedHero"
-      >
-        <span class="p-2 bg-neutral-800">{{ hero.id }}</span>
-        <span class="p-2">{{ hero.name }}</span>
-      </button>
+      <a routerLink="/detail/{{ hero.id }}">
+        <button
+          class="flex items-center duration-200 bg-neutral-600 hover:bg-neutral-700"
+        >
+          <span class="p-2 bg-neutral-800">{{ hero.id }}</span>
+          <span class="p-2">{{ hero.name }}</span>
+        </button>
+      </a>
     </li>
   </ul>
-
-  <div class="mt-5">
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-  </div>
 </div>

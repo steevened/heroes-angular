@@ -1,6 +1,15 @@
 <h1 class="text-center">{{ title }}</h1>
-<nav>
-  <a routerLink="/heroes">Heroes</a>
+<nav class="flex items-center gap-2">
+  <a routerLink="/dashboard">
+    <button class="p-2 rounded-lg bg-neutral-600 hover:bg-neutral-700">
+      Dashboard
+    </button>
+  </a>
+  <a routerLink="/heroes">
+    <button class="p-2 rounded-lg bg-neutral-600 hover:bg-neutral-700">
+      Heroes
+    </button>
+  </a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
