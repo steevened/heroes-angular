@@ -47,6 +47,15 @@ export class HeroService {
     );
   }
 
+  deleteHero(id: number) {
+    const url = `${this.heroesUrl}/${id}`;
+
+    return this.http.delete(url, this.httpOptions).pipe(
+      tap((_) => this.log(`deleted hero id=${id}`)),
+      catchError(this.handleError<Hero>('DeleteHero'))
+    );
+  }
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
